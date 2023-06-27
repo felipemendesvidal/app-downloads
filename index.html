@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="bg-grande">
+        <h1>Cole o link que deseja fazer download <br><span class="bg-grande-span">(do Google Imagens)</span></h1>
+        <input type="text" id="imagemUrl">
+        <button type="button" id="btn_baixar">Baixar</button>
+    </div>
+
+    <script>
+        document.getElementById("btn_baixar").addEventListener("click", function() {
+            var imagemUrl = document.getElementById("imagemUrl").value;
+            if (imagemUrl !== "") {
+                fetch(imagemUrl)
+                    .then(function(response) {
+                        return response.blob();
+                    })
+                    .then(function(blob) {
+                        var url = window.URL.createObjectURL(blob);
+                        var link = document.createElement("a");
+                        link.href = url;
+                        link.download = "imagem.jpg";
+                        link.click();
+                        window.URL.revokeObjectURL(url);
+                    })
+                    .catch(function(error) {
+                        console.log("Erro ao baixar a imagem:", error);
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

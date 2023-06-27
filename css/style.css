@@ -1,0 +1,10 @@
+/* reset */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{background-color: #0A0C10; display: flex; justify-content: center; align-items: center; height: 100vh;}
+h1{color: rgba(255, 255, 255, 0.747); font-weight: 500; text-transform: uppercase;}
+.bg-grande{background-color: rgba(255, 255, 255, 0.048); width: 90%;height: 80%; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.103); display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;}
+
+.bg-grande-span{font-size: 18px; font-weight: bold; color: rgb(99, 99, 99);}
+.bg-grande input{margin: 20px 0; width: 50%; height: 30px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.048); background-color: #ffffff23; color: #fff; padding: 10px;}
+.bg-grande  button{ border-radius: 10px; border: 1px solid rgb(85, 85, 85); background-color: #00000044; color: #ffffff; padding: 10px 40px; cursor: pointer;}
+
